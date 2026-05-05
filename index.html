@@ -305,7 +305,7 @@
   /* FLIP CARD */
   /* 306 строка — исправляем высоту */
 .flip-card {
-    height: 320px; 
+    height: 260px; 
     perspective: 1500px;
     cursor: pointer;
 }
@@ -368,29 +368,30 @@
   .flip-front-title {
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 17px;
-    line-height: 1.3;
+    font-size: 19px;
+    line-height: 1.4;
     color: var(--color-regal-navy);
-    margin-top: 20px;
+    margin-top: 24px;
+    margin-bottom: 12px;
   }
   .flip-front-hint {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--color-laser-blue);
     font-weight: 500;
     letter-spacing: 0.08em;
-    margin-top: 8px;
+    margin-top: 16px;
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
   }
-  .flip-front-hint [data-lucide] { width: 12px; height: 12px; }
+  .flip-front-hint [data-lucide] { width: 14px; height: 14px; }
 .flip-front-text {
     text-align: justify;
     hyphens: auto;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    font-size: 18px;
-    line-height: 1.3;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    font-size: 15px;
+    line-height: 1.7;
     color: var(--color-regal-navy);
 }
   .flip-back {
@@ -402,28 +403,28 @@
   .flip-back-title {
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 17px;
+    font-size: 18px;
     color: #ffffff;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    margin-bottom: 10px;
-    padding-bottom: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 14px;
     border-bottom: 1px solid rgba(166, 194, 242, 0.2);
   }
-  .flip-back-row { margin-bottom: 10px; }
+  .flip-back-row { margin-bottom: 16px; }
   .flip-back-label {
     font-family: var(--font-heading);
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: #a5caff;
-    margin-bottom: 3px;
+    margin-bottom: 6px;
   }
   .flip-back-text {
-    font-size: 12px;
-    color: rgba(253, 250, 245, 0.88);
-    line-height: 1.6;
+    font-size: 14px;
+    color: rgba(253, 250, 245, 0.9);
+    line-height: 1.7;
   }
 
   /* ===== EFFICIENCY ===== */
@@ -809,15 +810,17 @@
         margin: 0 auto; 
     }
     .flip-card { height: 420px; }
-    .flip-front, .flip-back { padding: 20px 18px; }
-    .flip-front-title, .flip-back-title { font-size: 15px; line-height: 1.15; margin-bottom: 8px; }
+    .flip-front, .flip-back { padding: 24px 20px; }
+    .flip-front-title, .flip-back-title { font-size: 16px; line-height: 1.25; margin-bottom: 12px; }
     .flip-front-text { 
-        font-size: 13px; line-height: 1.25; 
-        display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden;
+        font-size: 14px; line-height: 1.5; 
+        display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden;
+        margin-top: 12px; margin-bottom: 12px;
     }
-    .flip-front-hint { margin-top: auto; }
-    .flip-back-text { font-size: 11px; line-height: 1.2; }
-    .flip-back-row { margin-bottom: 5px; }
+    .flip-front-hint { margin-top: 12px; font-size: 11px; }
+    .flip-back-text { font-size: 13px; line-height: 1.6; }
+    .flip-back-label { font-size: 12px; margin-bottom: 4px; }
+    .flip-back-row { margin-bottom: 14px; }
   }
   @media (max-width: 480px) {
     .stats-grid { grid-template-columns: 1fr; }
@@ -830,7 +833,7 @@
 <header id="site-header">
   <div class="header-inner">
     <a href="#hero" class="logo-wrap">
-      <img src="Логотип компании.jpg" alt="ООО &laquo;Тач Ойл&raquo;" onerror="this.style.display='none'">
+      <img src="Лого-Photoroom.png" alt="ООО &laquo;Тач Ойл&raquo;" onerror="this.style.display='none'">
       <div class="logo-text">
         <span class="logo-name">TOUCH <span>OIL</span></span>
             </div>
@@ -1198,7 +1201,8 @@
     <div class="footer-top">
       <div class="footer-brand">
         <a href="#hero" class="logo-wrap">
-          <img src="Логотип компании.jpg" alt="ООО &laquo;Тач Ойл&raquo;" onerror="this.style.display='none'">
+          <img src="Лого-Photoroom.png" alt="ООО &laquo;Тач Ойл&raquo;" onerror="this.style.display='none'">
+
           <div class="logo-text">
             <span class="logo-name" style="color:#fff;">ТАЧ ОЙЛ</span>
                     </div>
