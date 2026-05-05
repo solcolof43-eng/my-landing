@@ -318,10 +318,16 @@
     transform-style: preserve-3d;
 }
 
-/* Переворот при наведении мышки (для компьютеров) */
+/* Разделяем наведение мышкой и нажатие пальцем */
 @media (hover: hover) {
   .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
+  }
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
   }
 }
 
@@ -756,13 +762,30 @@
   @media (max-width: 900px) {
     .about-grid { grid-template-columns: 1fr; gap: 40px; }
     .partners-grid { grid-template-columns: 1fr; }
-    .cards-grid { grid-template-columns: 1fr; }
-  }
-  @media (max-width: 768px) {
-    nav { display: none; }
-    .burger { display: flex; align-items: center; }
-    .stats-grid { grid-template-columns: 1fr 1fr; }
-    .pricing-grid { grid-template-columns: 1fr; }
+    /* Настройки для мобильных плашек */
+    .flip-card { height: 440px; } 
+
+    .flip-front-title, .flip-back-title { 
+        font-size: 15px; 
+        line-height: 1.15; /* Очень плотный заголовок */
+        margin-bottom: 6px; 
+    } 
+
+    .flip-front-text, .flip-back-text { 
+        font-size: 13px; /* Чуть уменьшили размер */
+        line-height: 1.25; /* Межстрочный интервал плотнее */
+    }
+
+    .flip-back-label { 
+        font-size: 10px; 
+        line-height: 1.1; 
+        margin-bottom: 2px; 
+        color: #a5caff;
+    }
+
+    .flip-back-row { 
+        margin-bottom: 5px; /* Минимальный отступ между пунктами */
+    }
     .header-inner { padding: 0 20px; }
     #hero, #about, #services, #efficiency, #partners, #pricing { padding-left: 20px; padding-right: 20px; }
     footer { padding-left: 20px; padding-right: 20px; }
