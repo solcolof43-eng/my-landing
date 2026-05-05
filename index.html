@@ -819,19 +819,20 @@
     /* Настройки карточек */
     .cards-grid { 
         grid-template-columns: 1fr !important; 
-        max-width: 340px; 
+        max-width: 100%; 
         margin: 0 auto; 
     }
-    .flip-card { height: 420px; }
+    .flip-card { height: 300px; }
     .flip-front, .flip-back { padding: 20px 18px; }
     .flip-front-title, .flip-back-title { font-size: 15px; line-height: 1.15; margin-bottom: 8px; }
     .flip-front-text { 
         font-size: 13px; line-height: 1.25; 
-        display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden;
+        display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;
+        margin-top: 8px;
     }
-    .flip-front-hint { margin-top: auto; }
+    .flip-front-hint { margin-top: auto; font-size: 11px; }
     .flip-back-text { font-size: 11px; line-height: 1.2; }
-    .flip-back-row { margin-bottom: 5px; }
+    .flip-back-row { margin-bottom: 8px; }
   }
   @media (max-width: 480px) {
     .stats-grid { grid-template-columns: 1fr; }
