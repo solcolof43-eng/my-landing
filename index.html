@@ -746,6 +746,50 @@
   .reveal-delay-3 { transition-delay: 0.3s; }
   .reveal-delay-4 { transition-delay: 0.4s; }
 
+  /* ===== SCROLL TO TOP BUTTON ===== */
+  .scroll-to-top {
+    position: fixed;
+    left: 32px;
+    bottom: 40px;
+    width: 48px;
+    height: 48px;
+    background: var(--color-laser-blue);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 500;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease, background var(--transition);
+    box-shadow: 0 8px 24px rgba(32, 97, 213, 0.3);
+  }
+
+  .scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .scroll-to-top:hover {
+    background: #1a50c7;
+    box-shadow: 0 12px 32px rgba(32, 97, 213, 0.4);
+    transform: translateY(-4px);
+  }
+
+  .scroll-to-top:active {
+    transform: translateY(-2px);
+  }
+
+  .scroll-to-top [data-lucide] {
+    width: 24px;
+    height: 24px;
+    color: #fff;
+  }
+
   /* ===== RESPONSIVE ===== */
   @media (max-width: 1100px) {
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
@@ -760,15 +804,7 @@
     .hero-content { padding: 100px 20px 60px; }
     .footer-top { flex-direction: column; gap: 32px; }
     .footer-bottom { flex-direction: column; text-align: center; }
-
-    /* Исправляем сетки, чтобы ничего не разваливалось */
-    .about-grid, .partners-grid, .pricing-grid { 
-        grid-template-columns: 1fr !important; 
-    }
-
-    /* Настройки карточек */
-    .cards-grid { 
-        grid-template-columns: 1fr !important; 
+    .scroll-to-top { left: 20px; }
         max-width: 340px; 
         margin: 0 auto; 
     }
@@ -1188,6 +1224,11 @@
   </div>
 </footer>
 
+<!-- ===== SCROLL TO TOP BUTTON ===== -->
+<button class="scroll-to-top" id="scrollToTopBtn" aria-label="Вернуться на главную">
+  <i data-lucide="arrow-up"></i>
+</button>
+
 <script>
 // ===== LUCIDE ICONS =====
 lucide.createIcons();
@@ -1343,6 +1384,26 @@ const counterObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.3 });
 counterEls.forEach(el => counterObserver.observe(el));
+
+// ===== SCROLL TO TOP BUTTON =====
+const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+// Показываем/скрываем кнопку при прокрутке
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    scrollToTopBtn.classList.add('visible');
+  } else {
+    scrollToTopBtn.classList.remove('visible');
+  }
+});
+
+// Возврат на главную при клике
+scrollToTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
 </script>
 </body>
 </html>
