@@ -810,30 +810,28 @@
     /* Логотип в шапке и подвале */
     .logo-wrap img { height: 36px; }
     .footer-brand .logo-wrap img { height: 32px; }
-    
-    /* Карточки услуг */
-    .cards-grid { 
-        grid-template-columns: 1fr !important; 
-        max-width: 100%; 
-        margin: 0 auto; 
-    }
-    .flip-card { height: 280px; }
-    .flip-front, .flip-back { padding: 20px 16px; }
-    .flip-front-title, .flip-back-title { font-size: 15px; line-height: 1.2; margin-bottom: 10px; }
-    .flip-front-text { 
-        font-size: 13px; line-height: 1.4; 
-        display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;
-        margin-top: 10px; margin-bottom: 10px;
-    }
-    .flip-front-hint { margin-top: 10px; font-size: 11px; }
-    .flip-back-text { font-size: 12px; line-height: 1.5; }
-    .flip-back-label { font-size: 11px; margin-bottom: 3px; }
-    .flip-back-row { margin-bottom: 12px; }
-    
-    /* Сетки */
+
+    /* Исправляем сетки, чтобы ничего не разваливалось */
     .about-grid, .partners-grid, .pricing-grid { 
         grid-template-columns: 1fr !important; 
     }
+
+    /* Настройки карточек */
+    .cards-grid { 
+        grid-template-columns: 1fr !important; 
+        max-width: 340px; 
+        margin: 0 auto; 
+    }
+    .flip-card { height: 420px; }
+    .flip-front, .flip-back { padding: 20px 18px; }
+    .flip-front-title, .flip-back-title { font-size: 15px; line-height: 1.15; margin-bottom: 8px; }
+    .flip-front-text { 
+        font-size: 13px; line-height: 1.25; 
+        display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .flip-front-hint { margin-top: auto; }
+    .flip-back-text { font-size: 11px; line-height: 1.2; }
+    .flip-back-row { margin-bottom: 5px; }
   }
   @media (max-width: 480px) {
     .stats-grid { grid-template-columns: 1fr; }
