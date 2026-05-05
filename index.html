@@ -806,11 +806,19 @@
     .footer-top { flex-direction: column; gap: 32px; }
     .footer-bottom { flex-direction: column; text-align: center; }
     .scroll-to-top { left: 20px; }
-        max-width: 340px; 
+    
+    /* Логотип в шапке и подвале */
+    .logo-wrap img { height: 36px; }
+    .footer-brand .logo-wrap img { height: 32px; }
+    
+    /* Карточки услуг */
+    .cards-grid { 
+        grid-template-columns: 1fr !important; 
+        max-width: 100%; 
         margin: 0 auto; 
     }
     .flip-card { height: 280px; }
-    .flip-front, .flip-back { padding: 20px 18px; }
+    .flip-front, .flip-back { padding: 20px 16px; }
     .flip-front-title, .flip-back-title { font-size: 15px; line-height: 1.2; margin-bottom: 10px; }
     .flip-front-text { 
         font-size: 13px; line-height: 1.4; 
@@ -821,6 +829,11 @@
     .flip-back-text { font-size: 12px; line-height: 1.5; }
     .flip-back-label { font-size: 11px; margin-bottom: 3px; }
     .flip-back-row { margin-bottom: 12px; }
+    
+    /* Сетки */
+    .about-grid, .partners-grid, .pricing-grid { 
+        grid-template-columns: 1fr !important; 
+    }
   }
   @media (max-width: 480px) {
     .stats-grid { grid-template-columns: 1fr; }
