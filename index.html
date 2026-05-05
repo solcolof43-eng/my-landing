@@ -325,11 +325,9 @@
   }
 }
 
-/* Переворот по клику/тапу (для телефонов и планшетов) */
 .flip-card.flipped .flip-card-inner {
   transform: rotateY(180deg);
 }
-
 /* 321 строка — позиционирование сторон */
 .flip-front, .flip-back {
     position: absolute;
@@ -753,40 +751,46 @@
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
     .pricing-grid { grid-template-columns: repeat(2, 1fr); }
   }
-  @media (max-width: 900px) {
-    .about-grid { grid-template-columns: 1fr; gap: 40px; }
-    .partners-grid { grid-template-columns: 1fr; }
-    /* Настройки для мобильных плашек */
-    .flip-card { height: 440px; } 
-
-    .flip-front-title, .flip-back-title { 
-        font-size: 15px; 
-        line-height: 1.15; /* Очень плотный заголовок */
-        margin-bottom: 6px; 
-    } 
-
-    .flip-front-text, .flip-back-text { 
-        font-size: 13px; /* Чуть уменьшили размер */
-        line-height: 1.25; /* Межстрочный интервал плотнее */
-    }
-
-    .flip-back-label { 
-        font-size: 10px; 
-        line-height: 1.1; 
-        margin-bottom: 2px; 
-        color: #a5caff;
-    }
-
-    .flip-back-row { 
-        margin-bottom: 5px; /* Минимальный отступ между пунктами */
-    }
+  @media (max-width: 768px) {
+    nav { display: none; }
+    .burger { display: flex; align-items: center; }
     .header-inner { padding: 0 20px; }
     #hero, #about, #services, #efficiency, #partners, #pricing { padding-left: 20px; padding-right: 20px; }
     footer { padding-left: 20px; padding-right: 20px; }
     .hero-content { padding: 100px 20px 60px; }
     .footer-top { flex-direction: column; gap: 32px; }
     .footer-bottom { flex-direction: column; text-align: center; }
-    .flip-card { height: 420px; }
+
+    /* КАРТОЧКИ: СТАВИМ В ОДИН СТОЛБЕЦ */
+    .cards-grid { 
+        grid-template-columns: 1fr !important; 
+        gap: 20px; 
+    }
+
+    .flip-card { height: 460px; } /* Высота, чтобы влез тендер */
+    .flip-front, .flip-back { padding: 22px 18px; }
+    
+    .flip-front-title, .flip-back-title { 
+        font-size: 15px; 
+        line-height: 1.1; 
+        margin-bottom: 8px; 
+    } 
+
+    .flip-front-text { 
+        font-size: 13px; 
+        line-height: 1.25; 
+        display: -webkit-box;
+        -webkit-line-clamp: 5; /* Обрезаем лишнее на лицевой стороне */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+
+    .flip-front-hint { margin-top: auto; } /* Кнопка "Подробнее" всегда снизу */
+
+    .flip-back-text { font-size: 11px; line-height: 1.2; }
+    .flip-back-row { margin-bottom: 5px; }
+    .flip-back-label { font-size: 10px; line-height: 1.1; margin-bottom: 2px; }
   }
   @media (max-width: 480px) {
     .stats-grid { grid-template-columns: 1fr; }
