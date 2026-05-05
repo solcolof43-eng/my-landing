@@ -318,9 +318,16 @@
     transform-style: preserve-3d;
 }
 
-.flip-card:hover .flip-card-inner,
-.flip-card.flipped .flip-card-inner {
+/* Переворот при наведении мышки (для компьютеров) */
+@media (hover: hover) {
+  .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
+  }
+}
+
+/* Переворот по клику/тапу (для телефонов и планшетов) */
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
 }
 
 /* 321 строка — позиционирование сторон */
@@ -762,13 +769,7 @@
     .hero-content { padding: 100px 20px 60px; }
     .footer-top { flex-direction: column; gap: 32px; }
     .footer-bottom { flex-direction: column; text-align: center; }
-    .flip-card { height: auto; }
-    .flip-card-inner { height: auto; min-height: 220px; }
-    .flip-front, .flip-back { position: static; }
-    .flip-card-inner { transform: none !important; }
-    .flip-card .flip-back { display: none; }
-    .flip-card.flipped .flip-back { display: flex; }
-    .flip-card.flipped .flip-front { display: none; }
+    .flip-card { height: 420px; }
   }
   @media (max-width: 480px) {
     .stats-grid { grid-template-columns: 1fr; }
